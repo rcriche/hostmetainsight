@@ -48,15 +48,25 @@ class Loader
         echo esc_html($data['name']);
         echo '</h3>';
 
+        echo '<p><strong>Categoria:</strong> ';
+        echo esc_html($data['category']);
+        echo '</p>';
+
+        echo '<p><strong>Impacto:</strong> ';
+        echo esc_html($data['impact']);
+        echo '</p>';
+
         echo '<p>';
         echo esc_html($data['message']);
         echo '</p>';
 
-        echo '<p>';
-        echo 'Pontuação: ';
-        echo esc_html($data['score']);
-        echo '/10';
+        echo '<p><strong>Recomendação:</strong> ';
+        echo esc_html($data['recommendation']);
         echo '</p>';
+
+        echo '<p><strong>Pontuação:</strong> ';
+        echo esc_html($data['score']);
+        echo '/10</p>';
 
         echo '<hr>';
 

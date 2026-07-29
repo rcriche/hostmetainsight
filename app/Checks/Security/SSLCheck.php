@@ -35,8 +35,11 @@ class SSLCheck implements CheckInterface
             return new AuditResult(
                 'ssl',
                 'SSL',
+                'Segurança',
+                'Alto',
                 'success',
                 'O site utiliza conexão segura HTTPS.',
+                'Continue mantendo o certificado SSL atualizado.',
                 10
             );
 
@@ -46,8 +49,11 @@ class SSLCheck implements CheckInterface
         return new AuditResult(
             'ssl',
             'SSL',
+            'Segurança',
+            'Alto',
             'error',
             'O site não utiliza conexão segura HTTPS.',
+            'Instale um certificado SSL para proteger os visitantes.',
             0
         );
 
