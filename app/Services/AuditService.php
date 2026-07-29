@@ -3,6 +3,7 @@
 namespace HostMetaInsight\Services;
 
 use HostMetaInsight\Reports\AuditReport;
+use HostMetaInsight\Checks\Security\SSLCheck;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -16,14 +17,18 @@ class AuditService
         $report = new AuditReport();
 
 
-        /**
-         * As verificações serão adicionadas aqui.
-         *
-         * Exemplo futuro:
-         *
-         * $check = new SSLCheck();
-         * $report->addResult($check->run());
-         */
+        $checks = [
+            new SSLCheck()
+        ];
+
+
+        foreach ($checks as $check) {
+
+            $result = $check->run();
+
+            $report->addResult($result);
+
+        }
 
 
         return $report;

@@ -3,7 +3,7 @@
  * Plugin Name: HostMeta Insight
  * Plugin URI: https://www.hostmeta.com.br
  * Description: Auditoria inteligente para identificar oportunidades de melhoria em sites WordPress.
- * Version: 0.1.0
+ * Version: 1.1.0
  * Requires at least: 6.0
  * Requires PHP: 8.0
  * Author: HostMeta
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HMI_VERSION', '0.1.0');
+define('HMI_VERSION', '1.1.0');
 define('HMI_PLUGIN_FILE', __FILE__);
 define('HMI_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('HMI_PLUGIN_URL', plugin_dir_url(__FILE__));

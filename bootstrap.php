@@ -4,5 +4,26 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-require_once HMI_PLUGIN_PATH . 'app/Core/Application.php';
-require_once HMI_PLUGIN_PATH . 'app/Core/Loader.php';
+spl_autoload_register(function ($class) {
+
+    $prefix = 'HostMetaInsight\\';
+
+    $base_dir = HMI_PLUGIN_PATH . 'app/';
+
+
+    if (strpos($class, $prefix) !== 0) {
+        return;
+    }
+
+
+    $relative_class = substr($class, strlen($prefix));
+
+
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+
+
+    if (file_exists($file)) {
+        require_once $file;
+    }
+
+});

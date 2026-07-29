@@ -11,7 +11,7 @@ interface CheckInterface
     /**
      * Executa a verificação.
      */
-    public function run(): array;
+    public function run(): \HostMetaInsight\DTO\AuditResult;
 
 
     /**
